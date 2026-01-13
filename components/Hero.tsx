@@ -53,11 +53,11 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-[calc(100vh-80px)] md:min-h-screen flex items-start md:items-center justify-center relative pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative pt-28 pb-16 md:pt-32 md:pb-24"
     >
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center px-4 md:px-6">
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-12 lg:gap-16 items-center px-4 md:px-6">
         {/* Text Content */}
-        <div className="order-1 flex flex-col items-start space-y-6 z-10 w-full">
+        <div className="order-1 flex flex-col items-start space-y-6 z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
