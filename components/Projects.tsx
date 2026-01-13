@@ -190,9 +190,9 @@ const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col h-full"
+              className="group bg-white rounded-xl md:rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col h-full"
             >
-              <div className="relative h-44 sm:h-48 overflow-hidden flex-shrink-0">
+              <div className="relative h-28 sm:h-48 overflow-hidden flex-shrink-0">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                 <img 
                   src={project.image} 
@@ -201,41 +201,41 @@ const Projects: React.FC = () => {
                 />
               </div>
               
-              <div className="p-5 md:p-6 flex flex-col flex-grow">
-                <div className="flex gap-2 mb-4 flex-wrap">
+              <div className="p-3 md:p-6 flex flex-col flex-grow">
+                <div className="flex gap-1 md:gap-2 mb-2 md:mb-4 flex-wrap">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] sm:text-xs font-mono px-2 py-1 rounded-md bg-slate-100 text-slate-600 border border-slate-200">
+                    <span key={tag} className="text-[9px] sm:text-xs font-mono px-1.5 py-0.5 md:px-2 md:py-1 rounded-md bg-slate-100 text-slate-600 border border-slate-200">
                       {tag}
                     </span>
                   ))}
                 </div>
                 
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-slate-600 text-xs sm:text-sm mb-6 flex-grow leading-relaxed">
+                <h3 className="text-sm sm:text-xl font-bold text-slate-900 mb-1 md:mb-2 group-hover:text-primary transition-colors leading-tight">{project.title}</h3>
+                <p className="text-slate-600 text-[10px] sm:text-sm mb-3 md:mb-6 flex-grow leading-snug md:leading-relaxed line-clamp-4 md:line-clamp-none">
                   {project.description}
                 </p>
                 
-                <div className="flex gap-4 mt-auto pt-4 border-t border-slate-50 flex-wrap">
+                <div className="flex gap-2 md:gap-4 mt-auto pt-2 md:pt-4 border-t border-slate-50 flex-wrap">
                   {project.demoUrl && project.demoUrl !== "#" && (
-                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-slate-800 hover:text-primary transition-colors">
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 md:gap-2 text-[10px] md:text-sm font-medium text-slate-800 hover:text-primary transition-colors">
                       {project.demoUrl.includes("linkedin.com") ? (
                         <>
-                          <PlayCircle className="w-4 h-4" /> Watch Demo
+                          <PlayCircle className="w-3 h-3 md:w-4 md:h-4" /> <span className="hidden md:inline">Watch Demo</span><span className="md:hidden">Demo</span>
                         </>
                       ) : (
                         <>
-                          <ExternalLink className="w-4 h-4" /> Live Demo
+                          <ExternalLink className="w-3 h-3 md:w-4 md:h-4" /> <span className="hidden md:inline">Live Demo</span><span className="md:hidden">Demo</span>
                         </>
                       )}
                     </a>
                   )}
                   {project.githubUrl && project.githubUrl !== "#" && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-slate-800 hover:text-primary transition-colors">
-                      <Github className="w-4 h-4" /> Code
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 md:gap-2 text-[10px] md:text-sm font-medium text-slate-800 hover:text-primary transition-colors">
+                      <Github className="w-3 h-3 md:w-4 md:h-4" /> Code
                     </a>
                   )}
                   {!project.githubUrl && !project.demoUrl && (
-                     <span className="text-sm text-slate-400 italic">Links coming soon</span>
+                     <span className="text-[10px] md:text-sm text-slate-400 italic">Links coming soon</span>
                   )}
                 </div>
               </div>
