@@ -72,7 +72,8 @@ const Skills: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* Mobile: Horizontal Scroll with Snap | Desktop: Grid */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 -mx-4 px-4 md:mx-auto md:px-0">
           {categories.map((category, catIdx) => (
             <motion.div
               key={category}
@@ -80,7 +81,7 @@ const Skills: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-              className={`bg-white p-5 md:p-6 rounded-2xl border border-slate-100 shadow-lg hover:border-primary/30 transition-all duration-300 hover:shadow-xl h-full ${
+              className={`flex-shrink-0 w-[85%] sm:w-[380px] md:w-auto snap-center bg-white p-5 md:p-6 rounded-2xl border border-slate-100 shadow-lg hover:border-primary/30 transition-all duration-300 hover:shadow-xl h-full ${
                 category === 'Agentic AI' ? 'md:row-span-2' : ''
               }`}
             >
