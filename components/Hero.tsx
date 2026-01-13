@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
     >
       <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-12 lg:gap-16 items-center px-4 md:px-6">
         {/* Text Content */}
-        <div className="order-1 flex flex-col items-start space-y-6 z-10">
+        <div className="order-2 md:order-1 flex flex-col items-start space-y-6 z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Image Content */}
-        <div className="order-2 flex justify-center md:justify-end relative pb-8 md:pb-0">
+        <div className="order-1 md:order-2 flex justify-center md:justify-end relative pb-8 md:pb-0">
           <div className="relative w-[260px] h-[320px] sm:w-[300px] sm:h-[380px] md:w-[320px] md:h-[400px] lg:w-[360px] lg:h-[450px]">
             <div className="absolute inset-0 border-2 border-primary/20 rounded-2xl transform rotate-6 translate-x-4 translate-y-4"></div>
             <div className="absolute inset-0 border-2 border-accent/20 rounded-2xl transform -rotate-3 -translate-x-4 -translate-y-4"></div>
