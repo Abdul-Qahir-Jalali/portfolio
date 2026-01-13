@@ -47,13 +47,13 @@ const Navbar: React.FC = () => {
     <nav 
       className={`fixed w-full z-40 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/80 backdrop-blur-md border-b border-slate-200 py-4 shadow-sm' 
+          ? 'bg-transparent md:bg-white/80 md:backdrop-blur-md md:border-b md:border-slate-200 py-4 md:shadow-sm' 
           : 'bg-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center flex-shrink-0">
+        <div className="flex items-center justify-end md:justify-between">
+          <div className="hidden md:flex items-center flex-shrink-0">
             <a 
               href="#home" 
               className="flex items-center gap-2 group"
