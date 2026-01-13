@@ -182,7 +182,10 @@ const Projects: React.FC = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div 
+          className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:pb-0 md:mx-0 md:px-0"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -190,7 +193,7 @@ const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col h-full"
+              className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col h-full min-w-[80vw] sm:min-w-[50vw] md:min-w-0 snap-center"
             >
               <div className="relative h-44 sm:h-48 overflow-hidden flex-shrink-0">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
