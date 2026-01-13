@@ -110,7 +110,8 @@ const Certificates: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        {/* Mobile: Horizontal Scroll with Snap | Desktop: Grid */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 md:overflow-visible md:pb-0 -mx-4 px-4 md:mx-auto md:px-0">
           {certificates.map((cert, index) => (
             <motion.div
               key={cert.id}
@@ -118,7 +119,7 @@ const Certificates: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group h-full"
+              className="flex-shrink-0 w-[85%] sm:w-[380px] md:w-auto snap-center flex flex-col p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group h-full"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-accent flex-shrink-0 group-hover:scale-110 transition-transform">
