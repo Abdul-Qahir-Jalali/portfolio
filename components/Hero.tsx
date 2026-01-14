@@ -220,10 +220,10 @@ const WORDS = [
   "Agentic AI",
   "Generative AI",
   "MLOps",
+  "Computer Vision",
   "Natural Language Processing",
   "Deep Learning",
   "Machine Learning",
-  "Computer Vision",
 ];
 
 const TypewriterTag: React.FC = () => {
@@ -242,11 +242,7 @@ const TypewriterTag: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (index === WORDS.length) {
-      setIndex(0); // Loop back to start
-      return;
-    }
-
+    // Start directly with index bounding check
     if (
       subIndex === WORDS[index].length + 1 &&
       !reverse
@@ -257,19 +253,21 @@ const TypewriterTag: React.FC = () => {
 
     if (subIndex === 0 && reverse) {
       setReverse(false);
-      setIndex((prev) => prev + 1);
+      setIndex((prev) => (prev + 1) % WORDS.length); // Safe loop
       return;
     }
 
     const timeout = setTimeout(() => {
       setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, reverse ? 75 : subIndex === WORDS[index].length ? 2000 : 150); // Speed: delete=75, pause=2000, type=150
+    }, reverse ? 75 : subIndex === WORDS[index].length ? 2000 : 150);
 
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse]);
 
   useEffect(() => {
-     setText(WORDS[index].substring(0, subIndex));
+     if (WORDS[index]) {
+       setText(WORDS[index].substring(0, subIndex));
+     }
   }, [subIndex, index]);
 
 
