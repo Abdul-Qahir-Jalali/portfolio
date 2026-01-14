@@ -1,5 +1,5 @@
-import React from "react";
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ArrowRight, Download, Github, Linkedin, Mail, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 import { generatePDF } from "../services/pdfGenerator";
 
@@ -35,6 +35,18 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 const Hero: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+      if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent)) {
+        setIsMobile(true);
+      }
+    };
+    checkMobile();
+  }, []);
+
   const handleScrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const element = document.getElementById("projects");
@@ -139,27 +151,37 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex gap-4 sm:gap-6 pt-6 sm:pt-8 flex-wrap"
           >
-            <SocialLink
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulqahir421@gmail.com"
-              icon={<Mail className="w-5 h-5" />}
-            />
-            <SocialLink
-              href="https://wa.me/923408198770"
-              icon={<WhatsAppIcon className="w-5 h-5" />}
-            />
-            <div className="w-px h-8 bg-slate-300 mx-2 hidden sm:block"></div>
-            <SocialLink
-              href="https://github.com/Abdul-Qahir-Jalali"
-              icon={<Github className="w-5 h-5" />}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/abdul-qahir-jalali"
-              icon={<Linkedin className="w-5 h-5" />}
-            />
-            <SocialLink
-              href="https://x.com/_Qahir_"
-              icon={<XIcon className="w-4 h-4" />}
-            />
+             <SocialLink
+               href={isMobile ? "mailto:abdulqahir421@gmail.com" : "https://mail.google.com/mail/?view=cm&fs=1&to=abdulqahir421@gmail.com"}
+               icon={<Mail className="w-5 h-5" />}
+               isMobile={isMobile}
+             />
+             <SocialLink
+               href={isMobile ? "whatsapp://send?phone=923408198770" : "https://wa.me/923408198770"}
+               icon={<WhatsAppIcon className="w-5 h-5" />}
+               isMobile={isMobile}
+             />
+             <div className="w-px h-8 bg-slate-300 mx-2 hidden sm:block"></div>
+             <SocialLink
+               href="https://github.com/Abdul-Qahir-Jalali"
+               icon={<Github className="w-5 h-5" />}
+               isMobile={isMobile}
+             />
+             <SocialLink
+               href="https://www.linkedin.com/in/abdul-qahir-jalali"
+               icon={<Linkedin className="w-5 h-5" />}
+               isMobile={isMobile}
+             />
+             <SocialLink
+               href={isMobile ? "twitter://user?screen_name=_Qahir_" : "https://x.com/_Qahir_"}
+               icon={<XIcon className="w-4 h-4" />}
+               isMobile={isMobile}
+             />
+             <SocialLink
+               href={isMobile ? "instagram://user?username=abdul_qahir_00" : "https://www.instagram.com/abdul_qahir_00?igsh=MWFoMjJsMGxraG56NQ=="}
+               icon={<Instagram className="w-5 h-5" />}
+               isMobile={isMobile}
+             />
           </motion.div>
         </div>
 
@@ -200,13 +222,14 @@ const Hero: React.FC = () => {
   );
 };
 
-const SocialLink: React.FC<{ href: string; icon: React.ReactNode }> = ({
+const SocialLink: React.FC<{ href: string; icon: React.ReactNode; isMobile?: boolean }> = ({
   href,
   icon,
+  isMobile,
 }) => (
   <a
     href={href}
-    target="_blank"
+    target={isMobile ? "_self" : "_blank"}
     rel="noopener noreferrer"
     className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-white hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300"
   >
