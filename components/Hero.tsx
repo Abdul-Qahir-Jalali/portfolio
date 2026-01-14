@@ -259,7 +259,7 @@ const TypewriterTag: React.FC = () => {
 
     const timeout = setTimeout(() => {
       setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, reverse ? 75 : subIndex === WORDS[index].length ? 2000 : 150);
+    }, reverse ? 75 : subIndex === WORDS[index].length ? 2000 : 50);
 
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse]);
