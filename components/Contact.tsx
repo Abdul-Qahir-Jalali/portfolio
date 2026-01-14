@@ -136,8 +136,8 @@ ${name}`;
                   <p className="text-slate-500 text-sm mb-3">Instant messaging & calls</p>
                   
                   <a 
-                    href="https://wa.me/923408198770" 
-                    target="_blank" 
+                    href={isMobile ? "whatsapp://send?phone=923408198770" : "https://wa.me/923408198770"}
+                    target={isMobile ? "_self" : "_blank"}
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#25D366] text-white font-medium hover:bg-[#128C7E] transition-colors w-full sm:w-auto justify-center text-sm sm:text-base"
                   >
