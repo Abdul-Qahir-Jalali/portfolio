@@ -205,7 +205,15 @@ const Hero: React.FC = () => {
               />
 
               <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-wrap gap-2 justify-center sm:justify-start">
-                {["Agentic AI", "GenAI", "MLOps", "Vision"].map((tag) => (
+                {[
+                  "Agentic AI",
+                  "GenAI",
+                  "MLOps",
+                  "NLP",
+                  "DL",
+                  "ML",
+                  "Computer Vision",
+                ].map((tag) => (
                   <span
                     key={tag}
                     className="px-2 sm:px-3 py-1 bg-white border border-slate-100 rounded-full text-[10px] sm:text-xs font-mono text-primary font-bold shadow-md"
