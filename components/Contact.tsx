@@ -225,11 +225,21 @@ ${name}`;
             <div className="text-center">
                 <h3 className="text-lg font-bold text-slate-900 mb-4">Connect on Social</h3>
                 <div className="flex gap-3 flex-wrap justify-center">
-                    <SocialIcon href="https://www.linkedin.com/in/abdul-qahir-jalali" icon={<Linkedin className="w-5 h-5" />} label="LinkedIn" />
-                    <SocialIcon href="https://github.com/Abdul-Qahir-Jalali" icon={<Github className="w-5 h-5" />} label="GitHub" />
-                    <SocialIcon href="https://x.com/_Qahir_" icon={<XIcon className="w-4 h-4" />} label="X" />
-                    <SocialIcon href="https://www.instagram.com/abdul_qahir_00?igsh=MWFoMjJsMGxraG56NQ==" icon={<Instagram className="w-5 h-5" />} label="Instagram" />
-                    <SocialIcon href="https://www.facebook.com/share/1E1b2oFrom/" icon={<Facebook className="w-5 h-5" />} label="Facebook" />
+                    <SocialIcon href="https://www.linkedin.com/in/abdul-qahir-jalali" icon={<Linkedin className="w-5 h-5" />} label="LinkedIn" isMobile={isMobile} />
+                    <SocialIcon href="https://github.com/Abdul-Qahir-Jalali" icon={<Github className="w-5 h-5" />} label="GitHub" isMobile={isMobile} />
+                    <SocialIcon 
+                      href={isMobile ? "twitter://user?screen_name=_Qahir_" : "https://x.com/_Qahir_"} 
+                      icon={<XIcon className="w-4 h-4" />} 
+                      label="X" 
+                      isMobile={isMobile}
+                    />
+                    <SocialIcon 
+                      href={isMobile ? "instagram://user?username=abdul_qahir_00" : "https://www.instagram.com/abdul_qahir_00?igsh=MWFoMjJsMGxraG56NQ=="} 
+                      icon={<Instagram className="w-5 h-5" />} 
+                      label="Instagram" 
+                      isMobile={isMobile}
+                    />
+                    <SocialIcon href="https://www.facebook.com/share/1E1b2oFrom/" icon={<Facebook className="w-5 h-5" />} label="Facebook" isMobile={isMobile} />
                 </div>
             </div>
         </div>
@@ -239,10 +249,10 @@ ${name}`;
   );
 };
 
-const SocialIcon: React.FC<{ href: string; icon: React.ReactNode; label: string }> = ({ href, icon, label }) => (
+const SocialIcon: React.FC<{ href: string; icon: React.ReactNode; label: string; isMobile?: boolean }> = ({ href, icon, label, isMobile }) => (
     <a 
       href={href}
-      target="_blank"
+      target={isMobile ? "_self" : "_blank"}
       rel="noopener noreferrer"
       className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300 shadow-sm"
       title={label}
