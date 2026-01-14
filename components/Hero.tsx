@@ -272,8 +272,8 @@ const TypewriterTag: React.FC = () => {
 
 
   return (
-    <div className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/90 backdrop-blur-sm border border-slate-200/60 rounded-full shadow-lg shadow-black/5 flex items-center gap-2 max-w-[90%] mx-auto">
-      <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
+    <div className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/95 backdrop-blur-md border border-primary/20 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.3)] ring-1 ring-primary/10 flex items-center gap-2 max-w-[90%] mx-auto transform transition-all duration-300 hover:scale-105 hover:border-primary/40 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+      <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0 shadow-[0_0_8px_rgba(37,99,235,0.6)]"></span>
       <span className="text-xs sm:text-sm font-mono text-slate-700 font-bold truncate">
         {text}
         <span className={`${blink ? "opacity-100" : "opacity-0"} text-primary ml-0.5`}>|</span>
