@@ -149,7 +149,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex gap-4 sm:gap-6 pt-6 sm:pt-8 flex-wrap"
+            className="flex gap-3 sm:gap-6 pt-6 sm:pt-8 flex-wrap"
           >
              <SocialLink
                href={isMobile ? "mailto:abdulqahir421@gmail.com" : "https://mail.google.com/mail/?view=cm&fs=1&to=abdulqahir421@gmail.com"}
@@ -231,7 +231,7 @@ const SocialLink: React.FC<{ href: string; icon: React.ReactNode; isMobile?: boo
     href={href}
     target={isMobile ? "_self" : "_blank"}
     rel="noopener noreferrer"
-    className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-white hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300"
+    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:text-white hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300"
   >
     {icon}
   </a>
