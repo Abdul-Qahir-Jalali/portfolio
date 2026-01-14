@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, MapPin, Send, Phone, Facebook, Instagram, Github, Linkedin, ArrowUpRight, Copy, Check } from 'lucide-react';
 
 // Custom X (formerly Twitter) Logo component
@@ -18,6 +18,17 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+      if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent)) {
+        setIsMobile(true);
+      }
+    };
+    checkMobile();
+  }, []);
   
   // Form State
   const [formData, setFormData] = useState({
@@ -57,7 +68,12 @@ Best regards,
 ${name}`;
 
     const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${myEmail}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-    window.open(gmailLink, '_blank');
+    
+    if (isMobile) {
+      window.location.href = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    } else {
+      window.open(gmailLink, '_blank');
+    }
   };
 
   return (
@@ -98,8 +114,8 @@ ${name}`;
                   </div>
                   
                   <a 
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulqahir421@gmail.com"
-                    target="_blank"
+                    href={isMobile ? "mailto:abdulqahir421@gmail.com" : "https://mail.google.com/mail/?view=cm&fs=1&to=abdulqahir421@gmail.com"}
+                    target={isMobile ? "_self" : "_blank"}
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 text-white font-medium hover:bg-primary transition-colors w-full sm:w-auto justify-center text-sm sm:text-base"
                   >
