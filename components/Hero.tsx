@@ -216,16 +216,17 @@ const Hero: React.FC = () => {
 };
 
 
+const WORDS = [
+  "Agentic AI",
+  "Generative AI",
+  "MLOps",
+  "Natural Language Processing",
+  "Deep Learning",
+  "Machine Learning",
+  "Computer Vision",
+];
+
 const TypewriterTag: React.FC = () => {
-  const words = [
-    "Agentic AI",
-    "Generative AI",
-    "MLOps",
-    "Natural Language Processing",
-    "Deep Learning",
-    "Machine Learning",
-    "Computer Vision",
-  ];
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -241,13 +242,13 @@ const TypewriterTag: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (index === words.length) {
+    if (index === WORDS.length) {
       setIndex(0); // Loop back to start
       return;
     }
 
     if (
-      subIndex === words[index].length + 1 &&
+      subIndex === WORDS[index].length + 1 &&
       !reverse
     ) {
       setReverse(true);
@@ -262,14 +263,14 @@ const TypewriterTag: React.FC = () => {
 
     const timeout = setTimeout(() => {
       setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, reverse ? 75 : subIndex === words[index].length ? 2000 : 150); // Speed: delete=75, pause=2000, type=150
+    }, reverse ? 75 : subIndex === WORDS[index].length ? 2000 : 150); // Speed: delete=75, pause=2000, type=150
 
     return () => clearTimeout(timeout);
-  }, [subIndex, index, reverse, words]);
+  }, [subIndex, index, reverse]);
 
   useEffect(() => {
-     setText(words[index].substring(0, subIndex));
-  }, [subIndex, index, words]);
+     setText(WORDS[index].substring(0, subIndex));
+  }, [subIndex, index]);
 
 
   return (
