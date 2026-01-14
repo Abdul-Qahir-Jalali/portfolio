@@ -204,29 +204,82 @@ const Hero: React.FC = () => {
                 }}
               />
 
-              <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-wrap gap-2 justify-center sm:justify-start">
-                {[
-                  "Agentic AI",
-                  "GenAI",
-                  "MLOps",
-                  "NLP",
-                  "DL",
-                  "ML",
-                  "Computer Vision",
-                ].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 sm:px-3 py-1 bg-white border border-slate-100 rounded-full text-[10px] sm:text-xs font-mono text-primary font-bold shadow-md"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center p-2">
+                <TypewriterTag />
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+
+const TypewriterTag: React.FC = () => {
+  const words = [
+    "Agentic AI",
+    "Generative AI",
+    "MLOps",
+    "Natural Language Processing",
+    "Deep Learning",
+    "Machine Learning",
+    "Computer Vision",
+  ];
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [reverse, setReverse] = useState(false);
+  const [blink, setBlink] = useState(true);
+
+  // Blinking cursor effect
+  useEffect(() => {
+    const timeout2 = setInterval(() => {
+      setBlink((prev) => !prev);
+    }, 500);
+    return () => clearInterval(timeout2);
+  }, []);
+
+  useEffect(() => {
+    if (index === words.length) {
+      setIndex(0); // Loop back to start
+      return;
+    }
+
+    if (
+      subIndex === words[index].length + 1 &&
+      !reverse
+    ) {
+      setReverse(true);
+      return;
+    }
+
+    if (subIndex === 0 && reverse) {
+      setReverse(false);
+      setIndex((prev) => prev + 1);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (reverse ? -1 : 1));
+    }, reverse ? 75 : subIndex === words[index].length ? 2000 : 150); // Speed: delete=75, pause=2000, type=150
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, reverse, words]);
+
+  useEffect(() => {
+     setText(words[index].substring(0, subIndex));
+  }, [subIndex, index, words]);
+
+
+  return (
+    <div className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/90 backdrop-blur-sm border border-slate-200/60 rounded-full shadow-lg shadow-black/5 flex items-center gap-2 max-w-[90%] mx-auto">
+      <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
+      <span className="text-xs sm:text-sm font-mono text-slate-700 font-bold truncate">
+        {text}
+        <span className={`${blink ? "opacity-100" : "opacity-0"} text-primary ml-0.5`}>|</span>
+      </span>
+    </div>
   );
 };
 
