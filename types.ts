@@ -23,7 +23,7 @@ export interface Skill {
   name: string;
   level: number; // 0-100
   icon: React.ReactNode;
-  category: 'Agentic AI' | 'AI/GenAI' | 'Data Science' | 'Development' | 'Tools';
+  category: 'Agentic AI & Systems' | 'AI & Machine Learning' | 'Data & Databases' | 'Web & Backend' | 'Cloud & DevOps' | 'Programming & Tools';
 }
 
 export interface ChatMessage {

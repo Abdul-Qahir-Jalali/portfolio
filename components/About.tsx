@@ -2,87 +2,87 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Layout, Eye, Brain, Server } from 'lucide-react';
 
-const features = [
-  {
-    icon: <Layout className="w-6 h-6 text-primary" />,
-    title: "Full-Stack ML & DL",
-    desc: "Building complete AI apps with robust ML algorithms and user-friendly frontends."
-  },
-  {
-    icon: <Eye className="w-6 h-6 text-secondary" />,
-    title: "Computer Vision & NLP",
-    desc: "Creating systems that see and understand, focusing on Object Detection and NLP."
-  },
-  {
-    icon: <Brain className="w-6 h-6 text-accent" />,
-    title: "Agentic & GenAI",
-    desc: "Building Autonomous Agents with LLMs that plan and execute tasks independently."
-  },
-  {
-    icon: <Server className="w-6 h-6 text-green-500" />,
-    title: "Production MLOps",
-    desc: "Designing scalable pipelines to turn experimental models into production deployments."
-  }
-];
-
 const About: React.FC = () => {
   return (
     <section id="about" className="py-16 md:py-24 relative overflow-hidden bg-white">
-       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-slate-50 to-transparent pointer-events-none z-0"></div>
+      {/* Background Gradient */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-slate-50 to-transparent pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+        {/* CHANGED: items-start to items-center. This perfectly centers the left column vertically! */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+          
+          {/* === LEFT COLUMN === */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col"
           >
-            <h2 className="text-sm font-mono text-primary tracking-widest uppercase mb-3">About Me</h2>
+            <h2 className="text-sm font-mono text-primary tracking-widest uppercase mb-3">
+              About Me
+            </h2>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-slate-900 leading-tight">
-              Solving Real-World Problems with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Cutting-Edge AI</span>
+              Solving Real-World Problems with{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                Cutting-Edge AI
+              </span>
             </h3>
-            <div className="space-y-4 text-slate-600 leading-relaxed text-base">
-              <p>
-                I am a Computer Science graduate (BSCS) and AI Intern specializing in Agentic AI, GenAI, and Computer Vision. My technical expertise spans the entire AI landscape, including MLOps, NLP, Deep Learning, and Data Science.
-              </p>
-              <p>
-                I am driven by a passion for solving real-world problems. I focus on applying these technologies to build practical, efficient solutions that deliver tangible value and impact.
-              </p>
-            </div>
-            
-            <div className="mt-8 flex gap-8">
+
+            {/* Intro text */}
+            <p className="text-slate-600 text-base leading-relaxed mb-10">
+              I am an AI Engineer and BSCS graduate focused on building practical, efficient solutions that deliver tangible value. I thrive on solving real-world problems by applying a robust, end-to-end technical stack.
+            </p>
+
+            {/* Stats section (mt-auto removed, space controlled by mb-10 on the paragraph above) */}
+            <div className="flex gap-12">
               <div>
-                <span className="block text-3xl md:text-4xl font-bold text-slate-900 mb-1">5+</span>
-                <span className="text-xs sm:text-sm text-slate-500">Months Experience</span>
+                <span className="block text-4xl font-bold text-slate-900 mb-1">9+</span>
+                <span className="text-sm font-medium text-slate-500">Months Experience</span>
               </div>
               <div>
-                <span className="block text-3xl md:text-4xl font-bold text-slate-900 mb-1">20+</span>
-                <span className="text-xs sm:text-sm text-slate-500">Projects Completed</span>
+                <span className="block text-4xl font-bold text-slate-900 mb-1">30+</span>
+                <span className="text-sm font-medium text-slate-500">Projects Completed</span>
               </div>
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            {features.map((feature, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-5 rounded-2xl bg-white border border-slate-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center group-hover:scale-110 transition-transform text-slate-700 flex-shrink-0">
-                    {feature.icon}
-                  </div>
-                  <h4 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">{feature.title}</h4>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{feature.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          {/* === RIGHT COLUMN: Expertise and Passion Cards === */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-6"
+          >
+            {/* Expertise Card */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute left-0 top-0 w-1.5 h-full bg-secondary/70 group-hover:bg-secondary transition-colors duration-300"></div>
+              <div className="pl-2">
+                <strong className="text-slate-800 font-bold flex items-center gap-3 mb-3 text-lg">
+                  <Server className="w-6 h-6 text-secondary" /> My Expertise
+                </strong>
+                <p className="leading-relaxed text-slate-600 text-sm sm:text-base">
+                  I specialize in core artificial intelligence (GenAI, Deep Learning, ML, NLP, and Computer Vision). To bring these models to production, I architect and deploy complex systems utilizing Agentic AI, Data Science, Data Analytics, MLOps, and Cloud Computing (AWS).
+                </p>
+              </div>
+            </div>
+
+            {/* Passion Card */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute left-0 top-0 w-1.5 h-full bg-accent/70 group-hover:bg-accent transition-colors duration-300"></div>
+              <div className="pl-2">
+                <strong className="text-slate-800 font-bold flex items-center gap-3 mb-3 text-lg">
+                  <Brain className="w-6 h-6 text-accent" /> My Passion
+                </strong>
+                <p className="leading-relaxed text-slate-600 text-sm sm:text-base">
+                  While my technical toolkit is industry-agnostic, I am deeply passionate about mental wellness technology. I actively focus on engineering preventative tools, digital therapeutics, and intelligent applications designed to help users overcome mental challenges and build stronger daily habits.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

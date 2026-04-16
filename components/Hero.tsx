@@ -217,13 +217,12 @@ const Hero: React.FC = () => {
 
 
 const WORDS = [
-  "Agentic AI",
-  "Generative AI",
-  "MLOps",
+  "Agentic AI & GenAI",
+  "Deep Learning & NLP",
   "Computer Vision",
-  "Natural Language Processing",
-  "Deep Learning",
-  "Machine Learning",
+  "MLOps & Deployment",
+  "Cloud Computing (AWS)",
+  "Databases & Data Science"
 ];
 
 const TypewriterTag: React.FC = () => {

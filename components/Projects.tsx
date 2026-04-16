@@ -5,6 +5,16 @@ import { motion } from 'framer-motion';
 
 const projects: Project[] = [
   // --- AGENTIC AI & LLMs ---
+    {
+    id: 1, // Number 1 spot!
+    title: "PsychTrainer",
+    description: "An industrial-grade training platform utilizing LangGraph's multi-agent orchestration. Psychology students interview an autonomous AI patient presenting with OCD, while a silent Agentic Professor secretly grades their clinical reasoning and empathy in real-time.",
+    tags: ["LangGraph", "FastAPI", "Qdrant RAG", "LiteLLM", "Groq (Llama 3.3)"],
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
+    githubUrl: "https://github.com/Abdul-Qahir-Jalali/Psych-Trainer/tree/developer",
+    demoUrl: "http://3.236.112.210:8000/"
+  },
+
   {
     id: 101,
     title: "Quote and Order Agent",

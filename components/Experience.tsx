@@ -11,12 +11,25 @@ const experiences: ExperienceItem[] = [
     companyUrl: "https://www.gomwd.com",
     period: "Dec 2025 - Present",
     description: [
-      "Designing and implementing end-to-end MLOps pipelines to automate the training, deployment, and monitoring of AI models, ensuring scalable and reliable production systems.",
-      "Developing autonomous Agentic AI systems and Generative AI solutions to handle complex workflows and decision-making processes.",
-      "Integrating deep learning models into the company’s existing infrastructure to enhance operational efficiency and software capabilities.",
-      "Orchestrating the full lifecycle of AI applications, from data preparation to deployment, ensuring seamless integration of AI agents into business products."
+      "Architected and deployed autonomous AI agent chatbots, utilizing LangGraph and MCP servers, directly onto the company’s production servers to automate complex workflows.",
+      "Engineered end-to-end MLOps pipelines to automate training, deployment, and monitoring of AI models.",
+      "Integrated custom Deep Learning models and advanced AI solutions into the existing software architecture to significantly enhance operational efficiency",
+      "Orchestrated full lifecycle of AI applications, from initial data preparation through to final production deployment."
     ]
   },
+    {
+    id: 3,
+    role: "AI Engineer & Ambassador",
+    company: "eMental Health International Collaborative (EMHIC)",
+    companyUrl: "https://emhicglobal.com/",
+    period: "Jan 2026 - Present",
+    description: [
+      "Contributing technical AI expertise to foster global best practices and innovation in digital mental health.",
+      "Supporting international collaboration and knowledge exchange to ensure digitally enabled support systems.",
+      "Advocating for a future where all populations have access to safe and effective digitally enabled mental health support."
+    ]
+  },
+
   {
     id: 1,
     role: "AI & ML Intern",
