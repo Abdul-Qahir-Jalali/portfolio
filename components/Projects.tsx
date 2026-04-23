@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Project } from '../types';
-import { ExternalLink, Github, PlayCircle } from 'lucide-react';
+import { ExternalLink, Github, PlayCircle, BookOpen } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const projects: Project[] = [
+export const projects: Project[] = [
   // --- AGENTIC AI & LLMs ---
     {
     id: 1, // Number 1 spot!
@@ -12,7 +13,8 @@ const projects: Project[] = [
     tags: ["LangGraph", "FastAPI", "Qdrant RAG", "LiteLLM", "Groq (Llama 3.3)"],
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
     githubUrl: "https://github.com/Abdul-Qahir-Jalali/Psych-Trainer/tree/developer",
-    demoUrl: "http://3.236.112.210:8000/"
+    demoUrl: "http://3.236.112.210:8000/",
+    slug: "psychtrainer"
   },
 
   {
@@ -244,7 +246,12 @@ const Projects: React.FC = () => {
                       <Github className="w-4 h-4" /> Code
                     </a>
                   )}
-                  {!project.githubUrl && !project.demoUrl && (
+                  {project.slug && (
+                    <Link to={`/project/${project.slug}`} className="flex items-center gap-2 text-sm font-bold text-primary hover:text-secondary transition-colors ml-auto">
+                      <BookOpen className="w-4 h-4" /> Details
+                    </Link>
+                  )}
+                  {!project.githubUrl && !project.demoUrl && !project.slug && (
                      <span className="text-sm text-slate-400 italic">Links coming soon</span>
                   )}
                 </div>

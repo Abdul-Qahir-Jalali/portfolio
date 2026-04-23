@@ -6,7 +6,7 @@ import { Briefcase, Calendar, ExternalLink } from 'lucide-react';
 const experiences: ExperienceItem[] = [
   {
     id: 2,
-    role: "AI Intern",
+    role: "AI Engineer",
     company: "Metropolitan Solutions (Pvt) Limited",
     companyUrl: "https://www.gomwd.com",
     period: "Dec 2025 - Present",

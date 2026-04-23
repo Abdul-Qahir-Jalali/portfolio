@@ -8,6 +8,20 @@ export interface Project {
   image: string;
   demoUrl?: string;
   githubUrl?: string;
+  slug?: string;
+}
+
+export interface ProjectDetails {
+  id: string; // The slug
+  tagline: string;
+  overview: string[];
+  architectureUrl?: string;
+  howItWorks: string[];
+  techStack: { name: string; reason: string }[];
+  features: { title: string; description: string; icon?: string }[];
+  challenges?: { problem: string; solution: string }[];
+  results?: string[];
+  screenshots?: { url: string; caption: string }[];
 }
 
 export interface ExperienceItem {
