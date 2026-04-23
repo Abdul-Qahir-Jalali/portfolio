@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExperienceItem } from '../types';
-import { Briefcase, Calendar, ExternalLink } from 'lucide-react';
+import { Briefcase, Calendar, ExternalLink, MapPin } from 'lucide-react';
 
 const experiences: ExperienceItem[] = [
   {
     id: 2,
-    role: "AI Engineer",
+    role: "Junior AI Engineer",
     company: "Metropolitan Solutions (Pvt) Limited",
     companyUrl: "https://www.gomwd.com",
     period: "Dec 2025 - Present",
+    workMode: "Onsite",
     description: [
       "Architected and deployed autonomous AI agent chatbots, utilizing LangGraph and MCP servers, directly onto the company’s production servers to automate complex workflows.",
       "Engineered end-to-end MLOps pipelines to automate training, deployment, and monitoring of AI models.",
@@ -23,6 +24,7 @@ const experiences: ExperienceItem[] = [
     company: "eMental Health International Collaborative (EMHIC)",
     companyUrl: "https://emhicglobal.com/",
     period: "Jan 2026 - Present",
+    workMode: "Remote",
     description: [
       "Contributing technical AI expertise to foster global best practices and innovation in digital mental health.",
       "Supporting international collaboration and knowledge exchange to ensure digitally enabled support systems.",
@@ -36,11 +38,26 @@ const experiences: ExperienceItem[] = [
     company: "ITSOLERA Pvt. Ltd.",
     companyUrl: "https://www.itsolera.com",
     period: "June 2025 - Aug 2025",
+    workMode: "Onsite",
     description: [
       "Built AI systems to detect fake/bot profiles on social media.",
       "Automated construction progress tracking with ML models.",
       "Created risk scoring algorithms for agricultural disaster zones.",
       "Collaborated on diverse AI projects with rapid technical adaptability."
+    ]
+  }
+  ,
+  {
+    id: 4,
+    role: "AI & MLIntern",
+    company: "DevelopersHub Corporation",
+    companyUrl: "https://www.linkedin.com/company/developershub-corporation/",
+    period: "June 2024 - Aug 2024",
+    workMode: "Remote",
+    description: [
+      "Completed a 3-month remote internship focused on the practical application of Machine Learning and Deep Learning techniques.",
+      "Gained hands-on experience in data preprocessing, training predictive models using supervised and unsupervised algorithms, and implementing neural network architectures.",
+      "Successfully translated theoretical AI concepts into functional models, with a strong focus on hyperparameter tuning, model evaluation, and performance optimization."
     ]
   }
 ];
@@ -88,9 +105,24 @@ const Experience: React.FC = () => {
                     )}
                   </div>
                 </div>
-                <div className="flex items-center gap-2 text-slate-500 text-xs sm:text-sm font-mono mt-2 sm:mt-0 bg-slate-100 px-3 py-1 rounded-full border border-slate-200 w-fit">
-                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
-                  {exp.period}
+                <div className="flex flex-wrap items-center gap-2 mt-2 sm:mt-0">
+                  {/* Date Pill */}
+                  <div className="flex items-center gap-2 text-slate-500 text-xs sm:text-sm font-mono bg-slate-100 px-3 py-1 rounded-full border border-slate-200 w-fit">
+                    <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                    {exp.period}
+                  </div>
+                  
+                  {/* Work Mode Pill */}
+                  {exp.workMode && (
+                    <div className={`flex items-center gap-1.5 text-xs sm:text-sm font-mono px-3 py-1 rounded-full border w-fit ${
+                      exp.workMode === 'Remote' 
+                        ? 'bg-blue-50 text-blue-600 border-blue-200' 
+                        : 'bg-emerald-50 text-emerald-600 border-emerald-200'
+                    }`}>
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
+                      {exp.workMode}
+                    </div>
+                  )}
                 </div>
               </div>
               

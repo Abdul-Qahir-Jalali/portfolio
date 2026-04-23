@@ -38,8 +38,8 @@ const About: React.FC = () => {
             {/* Stats section (mt-auto removed, space controlled by mb-10 on the paragraph above) */}
             <div className="flex gap-12">
               <div>
-                <span className="block text-4xl font-bold text-slate-900 mb-1">9+</span>
-                <span className="text-sm font-medium text-slate-500">Months Experience</span>
+                <span className="block text-4xl font-bold text-slate-900 mb-1">1+</span>
+                <span className="text-sm font-medium text-slate-500">Years Experience</span>
               </div>
               <div>
                 <span className="block text-4xl font-bold text-slate-900 mb-1">30+</span>

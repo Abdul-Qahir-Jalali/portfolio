@@ -30,7 +30,8 @@ export interface ExperienceItem {
   company: string;
   companyUrl?: string;
   period: string;
-  description: string[];
+  description: string[]
+  workMode?: string;
 }
 
 export interface Skill {

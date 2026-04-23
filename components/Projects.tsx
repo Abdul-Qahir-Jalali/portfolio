@@ -14,7 +14,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
     githubUrl: "https://github.com/Abdul-Qahir-Jalali/Psych-Trainer/tree/developer",
     demoUrl: "http://3.236.112.210:8000/",
-    slug: "psychtrainer"
+    // slug: "psychtrainer"
   },
 
   {
