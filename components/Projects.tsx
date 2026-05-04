@@ -19,33 +19,6 @@ export const projects: Project[] = [
 
   {
     id: 101,
-    title: "Quote and Order Agent",
-    description: "An agent chatbot that acts as a sales representative to help fill complex forms, calculate quotes, and place orders.",
-    tags: ["Python", "FastAPI", "LLMs", "Agentic AI", "LangGraph", "MCP Servers"],
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
-    githubUrl: "https://github.com/Abdul-Qahir-Jalali/Quote_and_Order_Agent",
-    demoUrl: "https://quote-and-order-agent.vercel.app/"
-  },
-  {
-    id: 102,
-    title: "Fact Checker Agent",
-    description: "This agent verifies claimed statements using live web search to confirm if they are true.",
-    tags: ["Python", "LangGraph", "FastAPI", "Groq (Llama 3)", "LangChain", "Tavily API", "MCP Server"],
-    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800&auto=format&fit=crop",
-    githubUrl: "https://github.com/Abdul-Qahir-Jalali/fact_checker_agent",
-    demoUrl: "https://fact-checker-agent.vercel.app/"
-  },
-  {
-    id: 103,
-    title: "SQL Analyst Agent",
-    description: "An agent that lets you talk to your database in plain English to view data and create new records.",
-    tags: ["Python", "LangGraph", "Groq (Llama 3.3)", "MySQL", "SQL", "MCP server"],
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop",
-    githubUrl: "https://github.com/Abdul-Qahir-Jalali/sql_analyst-agent",
-    demoUrl: "https://sql-analyst-agent.vercel.app/"
-  },
-  {
-    id: 104,
     title: "24/7 AI Email Auto-Responder",
     description: "An AI agent acting as customer support for mobile shops, automatically replying to client queries about phones.",
     tags: ["Python", "LangGraph", "Groq (Llama 3)", "Gmail API", "Google OAuth2", "MCP Architecture"],
@@ -53,8 +26,29 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Abdul-Qahir-Jalali/auto-mail-agent",
     demoUrl: "https://www.linkedin.com/posts/abdul-qahir-jalali_ai-agenticai-python-activity-7413610160088301568-P6JH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKp7NQBm3kfn_u8WtJxwxRoKuL-vPxRjtg" 
   },
+
   {
-    id: 5,
+    id: 102,
+    title: "SQL Analyst Agent",
+    description: "An agent that lets you talk to your database in plain English to view data and create new records.",
+    tags: ["Python", "LangGraph", "Groq (Llama 3.3)", "MySQL", "SQL", "MCP server"],
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop",
+    githubUrl: "https://github.com/Abdul-Qahir-Jalali/sql_analyst-agent",
+    demoUrl: "https://sql-analyst-agent.vercel.app/"
+  },
+
+  {
+    id: 103,
+    title: "Fact Checker Agent",
+    description: "This agent verifies claimed statements using live web search to confirm if they are true.",
+    tags: ["Python", "LangGraph", "FastAPI", "Groq (Llama 3)", "LangChain", "Tavily API", "MCP Server"],
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800&auto=format&fit=crop",
+    githubUrl: "https://github.com/Abdul-Qahir-Jalali/fact_checker_agent",
+    demoUrl: "https://fact-checker-agent.vercel.app/"
+  },
+
+  {
+    id: 104,
     title: "MindGuard AI",
     description: "Unlike basic chatbots, this therapist uses proper medical logic to diagnose symptoms, explain full problem, create flowcharts, and suggest videos.",
     tags: ["React", "Gemini API", "Mermaid.js", "Tailwind"],
@@ -63,9 +57,44 @@ export const projects: Project[] = [
     demoUrl: "https://mind-guard-ai-qahir.vercel.app/"
   },
 
+  {
+    id: 5,
+    title: "Quote and Order Agent",
+    description: "An agent chatbot that acts as a sales representative to help fill complex forms, calculate quotes, and place orders.",
+    tags: ["Python", "FastAPI", "LLMs", "Agentic AI", "LangGraph", "MCP Servers"],
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
+    githubUrl: "https://github.com/Abdul-Qahir-Jalali/Quote_and_Order_Agent",
+    demoUrl: "https://quote-and-order-agent.vercel.app/"
+  },
+  
+  
+  
+  
+
   // --- COMPUTER VISION & MLOPS ---
+  
   {
     id: 105,
+    title: "PostureGuard",
+    description: "A real-time webcam tool that detects forward head posture and plays continuous audio alerts until you sit straight.",
+    tags: ["React", "MediaPipe Pose", "Web Speech API"],
+    image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=800&auto=format&fit=crop",
+    githubUrl: "https://github.com/Abdul-Qahir-Jalali/PostureGuard---Real-Time-Forward-Head-Posture-Detection",
+    demoUrl: "https://real-time-postureguard.netlify.app/"
+  },
+
+  {
+    id: 15,
+    title: "Crop Recommendation",
+    description: "Analyzes soil nutrients and weather data provided by the user to recommend the best crop for optimal growth.",
+    tags: ["Python", "Flask", "Scikit-learn"],
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop",
+    githubUrl: "https://github.com/Abdul-Qahir-Jalali/crop-recommendation-system",
+    demoUrl: "https://qahir.pythonanywhere.com/"
+  },
+  
+  {
+    id: 6,
     title: "Object Detection Dashboard UI",
     description: "A modern frontend interface featuring secure Sign Up and Sign In pages designed for an object detection platform.",
     tags: ["TypeScript", "React", "Python", "SQL"],
@@ -74,7 +103,7 @@ export const projects: Project[] = [
     demoUrl: "https://object-detector-eta.vercel.app/"
   },
   {
-    id: 15,
+    id: 106,
     title: "Object Detector",
     description: "An end-to-end MLOps pipeline detecting objects like boxes, documents, houses and chairs. It automatically collects data and retrains itself.",
     tags: ["Python", "YOLO11", "Docker", "MLOps"],
@@ -82,17 +111,9 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Abdul-Qahir-Jalali/object_detection",
     demoUrl: "https://huggingface.co/spaces/qahir00/object_detection"
   },
+  
   {
-    id: 6,
-    title: "PostureGuard",
-    description: "A real-time webcam tool that detects forward head posture and plays continuous audio alerts until you sit straight.",
-    tags: ["React", "MediaPipe Pose", "Web Speech API"],
-    image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=800&auto=format&fit=crop",
-    githubUrl: "https://github.com/Abdul-Qahir-Jalali/PostureGuard---Real-Time-Forward-Head-Posture-Detection",
-    demoUrl: "https://real-time-postureguard.netlify.app/"
-  },
-  {
-    id: 106,
+    id: 7,
     title: "Spam Email Detection",
     description: "An end-to-end spam email detection pipeline that auto-retrains when accuracy drops, adapting to new spam tricks to maintain high performance.",
     tags: ["Python", "Docker", "DVC", "MLflow", "MLOps"],
@@ -101,7 +122,7 @@ export const projects: Project[] = [
     demoUrl: "" 
   },
   {
-    id: 7,
+    id: 13,
     title: "Urdu Deepfake Audio Detector (FYP)",
     description: "The first-ever Urdu deepfake detector, trained on a custom dataset of 9,600 audio clips to identify voice clones.",
     tags: ["Python", "PyTorch", "Wav2Vec2", "ElevenLabs"],
@@ -112,7 +133,7 @@ export const projects: Project[] = [
 
   // --- GENERATIVE AI ---
   {
-    id: 13,
+    id: 12,
     title: "Text-to-Speech Generator",
     description: "Converts text to realistic speech using Coqui TTS with a simple interface.",
     tags: ["Python", "Coqui TTS", "Gradio"],
@@ -121,7 +142,7 @@ export const projects: Project[] = [
     demoUrl: "https://huggingface.co/spaces/qahir00/text-to-speech"
   },
   {
-    id: 12,
+    id: 151,
     title: "Text-to-Image Generator",
     description: "Generates unique high-quality images from text prompts using Stable Diffusion.",
     tags: ["Python", "Stable Diffusion", "Gradio"],
@@ -132,7 +153,7 @@ export const projects: Project[] = [
 
   // --- DATA SCIENCE & ANALYTICS ---
   {
-    id: 151,
+    id: 10,
     title: "EPL Data Analysis",
     description: "A comprehensive analysis of English Premier League stats featuring interactive Atlas visualizations and an ML model for match predictions.",
     tags: ["Python", "Altair", "Scikit-learn", "Pandas"],
@@ -141,7 +162,7 @@ export const projects: Project[] = [
     demoUrl: "https://abdul-qahir-jalali.github.io/epl-2019-2020-data-analysis/"
   },
   {
-    id: 10,
+    id: 9,
     title: "Zomato Data Analysis",
     description: "Visualizes restaurant trends, pricing, and ratings from raw data.",
     tags: ["Python", "Pandas", "Matplotlib", "Seaborn"],
@@ -150,7 +171,7 @@ export const projects: Project[] = [
     demoUrl: "https://abdul-qahir-jalali.github.io/zomato-data-analysis/"
   },
   {
-    id: 9,
+    id: 11,
     title: "Customer Segmentation",
     description: "Uses unsupervised K-Means clustering to uncover hidden patterns and automatically group customers into distinct behavioral categories.",
     tags: ["Python", "Scikit-learn", "K-Means"],
@@ -159,7 +180,7 @@ export const projects: Project[] = [
     demoUrl: "https://abdul-qahir-jalali.github.io/customer_clustering_analysis/"
   },
   {
-    id: 11,
+    id: 4,
     title: "Customer Churn Prediction",
     description: "Uses Deep Learning to predict if customers will leave.",
     tags: ["Python", "ANN", "Deep Learning"],
@@ -167,15 +188,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Abdul-Qahir-Jalali/customer_churn_prediction",
     demoUrl: "https://abdul-qahir-jalali.github.io/customer_churn_prediction/"
   },
-  {
-    id: 4,
-    title: "Crop Recommendation",
-    description: "Analyzes soil nutrients and weather data provided by the user to recommend the best crop for optimal growth.",
-    tags: ["Python", "Flask", "Scikit-learn"],
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop",
-    githubUrl: "https://github.com/Abdul-Qahir-Jalali/crop-recommendation-system",
-    demoUrl: "https://qahir.pythonanywhere.com/"
-  }
+  
 ];
 
 const Projects: React.FC = () => {
