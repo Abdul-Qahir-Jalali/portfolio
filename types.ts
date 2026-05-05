@@ -32,6 +32,7 @@ export interface ExperienceItem {
   period: string;
   description: string[]
   workMode?: string;
+  location?: string;
 }
 
 export interface Skill {

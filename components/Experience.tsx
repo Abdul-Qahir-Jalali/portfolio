@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExperienceItem } from '../types';
-import { Briefcase, Calendar, ExternalLink, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, ExternalLink, MapPin, Globe } from 'lucide-react';
 
 const experiences: ExperienceItem[] = [
   {
@@ -11,12 +11,14 @@ const experiences: ExperienceItem[] = [
     companyUrl: "https://www.gomwd.com",
     period: "Dec 2025 - Present",
     workMode: "Onsite",
+    location: "Islamabad",
     description: [
-      "Architected and deployed autonomous AI agent chatbots, utilizing LangGraph and MCP servers, directly onto the company’s production servers to automate complex workflows.",
-      "Engineered end-to-end MLOps pipelines to automate training, deployment, and monitoring of AI models.",
-      "Integrated custom Deep Learning models and advanced AI solutions into the existing software architecture to significantly enhance operational efficiency",
-      "Orchestrated full lifecycle of AI applications, from initial data preparation through to final production deployment."
+      "Architected and deployed autonomous AI agent chatbots, utilizing LangGraph, CrewAI, and MCP servers, directly onto the company’s production servers to automate complex workflows.",
+      "Fine-tuned state-of-the-art Open Source Large Language Models (LLMs) such as Llama 3.1 8B and Mistral using LoRA, QLoRA, and DoRA techniques for specialized domain-specific enterprise tasks.",
+      "Designed and implemented advanced Retrieval-Augmented Generation (RAG) architectures incorporating hybrid search, semantic chunking, and cross-encoder reranking to ensure highly accurate, context-aware responses.",
+      "Engineered end-to-end MLOps pipelines using MLflow and DVC to automate training, version control, CI/CD, and drift monitoring of AI models."
     ]
+
   },
     {
     id: 3,
@@ -25,11 +27,13 @@ const experiences: ExperienceItem[] = [
     companyUrl: "https://emhicglobal.com/",
     period: "Jan 2026 - Present",
     workMode: "Remote",
+    location: "New Zealand",
     description: [
-      "Contributing technical AI expertise to foster global best practices and innovation in digital mental health.",
-      "Supporting international collaboration and knowledge exchange to ensure digitally enabled support systems.",
-      "Advocating for a future where all populations have access to safe and effective digitally enabled mental health support."
+      "Replaced legacy basic keyword searching with an advanced RAG-based intelligent search system, significantly improving information retrieval accuracy.",
+      "Fine-tuned Meta Llama 3.1 (8B) to automatically generate highly accurate profile tags by analyzing user descriptions and background details.",
+      "Supported international collaboration and knowledge exchange to ensure digitally enabled support systems."
     ]
+
   },
 
   {
@@ -39,12 +43,13 @@ const experiences: ExperienceItem[] = [
     companyUrl: "https://www.itsolera.com",
     period: "June 2025 - Aug 2025",
     workMode: "Onsite",
+    location: "Islamabad",
     description: [
-      "Built AI systems to detect fake/bot profiles on social media.",
-      "Automated construction progress tracking with ML models.",
-      "Created risk scoring algorithms for agricultural disaster zones.",
-      "Collaborated on diverse AI projects with rapid technical adaptability."
+      "Contributed to AI and ML projects including AI-Enhanced Detection of Fake and Bot Profiles on Social Media.",
+      "Engineered and implemented full end-to-end MLOps pipelines across all projects, ensuring seamless model training, deployment, and lifecycle management.",
+      "Assisted in multi-modal risk scoring data preprocessing, model development, and performance evaluation."
     ]
+
   }
   ,
   {
@@ -123,6 +128,14 @@ const Experience: React.FC = () => {
                       {exp.workMode}
                     </div>
                   )}
+                                    {/* Location Pill */}
+                  {exp.location && (
+                    <div className="flex items-center gap-1.5 text-xs sm:text-sm font-mono px-3 py-1 rounded-full border border-purple-200 bg-purple-50 text-purple-600 w-fit">
+                      <Globe className="w-3 h-3 sm:w-4 sm:h-4" />
+                      {exp.location}
+                    </div>
+                  )}
+
                 </div>
               </div>
               
